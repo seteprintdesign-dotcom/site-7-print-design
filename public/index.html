@@ -5,54 +5,648 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#171717">
-  <title>7 Print Design | Personalização</title>
+  <meta name="description" content="7 Print Design — camisetas, personalizados e produtos da linha religiosa. Sua ideia ganha forma aqui.">
+  <title>7 Print Design | Sua ideia ganha forma</title>
+
   <style>
-    * { box-sizing: border-box; }
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #202020;
+      background: #f7f6f3;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* CABEÇALHO */
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e9e7e3;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .header-content {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: #d9232e;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: #d9232e;
+    }
+
+    .header-button {
+      background: #d9232e;
+      color: #fff;
+      padding: 13px 19px;
+      border-radius: 3px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* DESTAQUE PRINCIPAL */
+
+    .hero {
       background: #171717;
       color: #fff;
-      font-family: Arial, sans-serif;
+      padding: 110px 0 105px;
+      position: relative;
+      overflow: hidden;
     }
-    header {
-      padding: 28px 7%;
-      border-bottom: 1px solid #333;
+
+    .hero::after {
+      content: "7";
+      position: absolute;
+      right: 8%;
+      top: -100px;
+      font-size: 570px;
+      line-height: 1;
+      font-weight: 900;
+      color: rgba(255,255,255,0.035);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 750px;
+    }
+
+    .eyebrow {
+      color: #ed454c;
+      font-size: 12px;
       font-weight: bold;
-      letter-spacing: 2px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
     }
-    main {
-      min-height: 75vh;
+
+    .hero h1 {
+      font-size: clamp(43px, 7vw, 78px);
+      line-height: 1.04;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: #ed343e;
+    }
+
+    .hero p {
+      max-width: 530px;
+      color: #c5c5c5;
+      font-size: 17px;
+      line-height: 1.8;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #d9232e;
+      color: #fff;
+      padding: 17px 25px;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #b91d27;
+      transform: translateY(-2px);
+    }
+
+    /* INTRODUÇÃO */
+
+    .intro {
+      padding: 85px 0 55px;
+      text-align: center;
+    }
+
+    .section-label {
+      color: #d9232e;
+      font-size: 11px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .intro h2,
+    .services h2,
+    .about h2 {
+      font-size: clamp(30px, 4vw, 43px);
+      letter-spacing: -1.5px;
+      margin-bottom: 18px;
+    }
+
+    .intro p {
+      max-width: 650px;
+      margin: auto;
+      color: #666;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* CATEGORIAS */
+
+    .categories {
+      padding: 25px 0 100px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .category-card {
+      background: #fff;
+      border: 1px solid #e8e6e1;
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      transition: 0.25s;
+    }
+
+    .category-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+
+    .category-visual {
+      height: 215px;
+      background: #222;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .category-visual::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 50%;
+    }
+
+    .category-visual span {
+      font-size: 65px;
+      font-weight: 900;
+      color: rgba(255,255,255,0.9);
+      position: relative;
+    }
+
+    .category-visual.red {
+      background: #b9202a;
+    }
+
+    .category-visual.light {
+      background: #dedbd5;
+      color: #222;
+    }
+
+    .category-visual.light span {
+      color: #222;
+    }
+
+    .category-info {
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .category-info h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+
+    .category-info p {
+      color: #777;
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 22px;
+    }
+
+    .category-info a {
+      color: #d9232e;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: auto;
+    }
+
+    /* PERSONALIZAÇÃO */
+
+    .services {
+      background: #eceae5;
+      padding: 85px 0;
+    }
+
+    .services-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .services p,
+    .about p {
+      color: #666;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .service-list {
+      margin-top: 25px;
+      display: grid;
+      gap: 15px;
+    }
+
+    .service-item {
+      border-left: 3px solid #d9232e;
+      padding: 12px 18px;
+      background: rgba(255,255,255,0.65);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .services-note {
+      background: #202020;
+      color: #fff;
+      padding: 45px;
+      min-height: 280px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 70px 10%;
     }
-    h1 {
-      font-size: clamp(42px, 8vw, 88px);
-      line-height: 1.05;
-      margin: 0;
+
+    .services-note strong {
+      color: #ed454c;
+      font-size: 12px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
     }
-    h1 span { color: #e3262e; }
-    p {
-      color: #ccc;
-      font-size: 19px;
-      line-height: 1.6;
-      max-width: 580px;
+
+    .services-note h3 {
+      font-size: 31px;
+      line-height: 1.25;
+      margin-bottom: 15px;
     }
+
+    .services-note p {
+      color: #c5c5c5;
+    }
+
+    /* SOBRE */
+
+    .about {
+      padding: 90px 0;
+      background: #fff;
+    }
+
+    .about-content {
+      max-width: 780px;
+      margin: auto;
+      text-align: center;
+    }
+
+    /* CONTATO */
+
+    .contact {
+      background: #171717;
+      color: #fff;
+      text-align: center;
+      padding: 85px 20px;
+    }
+
+    .contact h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 18px;
+    }
+
+    .contact p {
+      color: #c5c5c5;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    /* RODAPÉ */
+
     footer {
-      padding: 25px 7%;
+      background: #101010;
       color: #aaa;
-      border-top: 1px solid #333;
+      padding: 30px 0;
+      font-size: 12px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer strong {
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    footer span {
+      color: #ed454c;
+    }
+
+    /* CELULAR */
+
+    @media (max-width: 800px) {
+      .header-content {
+        padding: 18px 0;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 11px;
+      }
+
+      .header-button {
+        padding: 11px 13px;
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 85px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .category-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .category-card {
+        min-height: 340px;
+      }
+
+      .category-visual {
+        height: 190px;
+      }
+
+      .services-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .services-note {
+        padding: 30px;
+      }
+
+      .intro {
+        padding-top: 65px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header>7 PRINT DESIGN</header>
+
+  <header>
+    <div class="container header-content">
+      <!-- Espaço reservado para inserir o logo oficial -->
+      <a href="#" class="brand">7 PRINT <span>DESIGN</span></a>
+
+      <nav>
+        <a href="#inicio">INÍCIO</a>
+        <a href="#produtos">PRODUTOS</a>
+        <a href="#personalizacao">PERSONALIZAÇÃO</a>
+        <a href="#sobre">SOBRE</a>
+      </nav>
+
+      <a class="header-button"
+         href="https://wa.me/5511955577306"
+         target="_blank">FALE CONOSCO</a>
+    </div>
+  </header>
+
   <main>
-    <h1>SUA IDEIA.<br><span>NOSSA CRIAÇÃO.</span><br>SEU ESTILO.</h1>
-    <p>Personalização que transforma ideias em produtos únicos.</p>
-    <p>Vestuário • Personalizados • Linha religiosa</p>
+
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">7 Print Design</div>
+
+          <h1>
+            SUA IDEIA.<br>
+            <span>NOSSA CRIAÇÃO.</span><br>
+            SEU ESTILO.
+          </h1>
+
+          <p>
+            Criamos produtos personalizados que expressam
+            sua identidade. Do vestuário aos detalhes,
+            cada projeto ganha forma com criatividade e personalidade.
+          </p>
+
+          <a class="button"
+             href="https://wa.me/5511955577306"
+             target="_blank">FAÇA SEU ORÇAMENTO</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" id="produtos">
+      <div class="container">
+        <div class="section-label">Nossas criações</div>
+        <h2>Personalização sem limites.</h2>
+        <p>
+          Produtos desenvolvidos para diferentes estilos,
+          ocasiões e propósitos. Conheça nossas linhas
+          e encontre novas possibilidades para suas ideias.
+        </p>
+      </div>
+    </section>
+
+    <section class="categories">
+      <div class="container">
+        <div class="category-grid">
+
+          <article class="category-card">
+            <div class="category-visual">
+              <span>01</span>
+            </div>
+            <div class="category-info">
+              <h3>Vestuário</h3>
+              <p>
+                Camisetas e peças personalizadas.
+                Estilo, identidade e estampas que fazem a diferença.
+              </p>
+              <a href="https://wa.me/5511955577306" target="_blank">
+                Conheça a linha →
+              </a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-visual red">
+              <span>02</span>
+            </div>
+            <div class="category-info">
+              <h3>Personalizados</h3>
+              <p>
+                Canecas, squeezes, ecobags, porta-guias
+                e produtos criados com a sua identidade.
+              </p>
+              <a href="https://wa.me/5511955577306" target="_blank">
+                Conheça a linha →
+              </a>
+            </div>
+          </article>
+
+          <article class="category-card">
+            <div class="category-visual light">
+              <span>03</span>
+            </div>
+            <div class="category-info">
+              <h3>Linha religiosa</h3>
+              <p>
+                Criações inspiradas na Umbanda e no Candomblé,
+                além de produtos para casas religiosas.
+              </p>
+              <a href="https://wa.me/5511955577306" target="_blank">
+                Conheça a linha →
+              </a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="personalizacao">
+      <div class="container services-content">
+
+        <div>
+          <div class="section-label">Tecnologia e criatividade</div>
+          <h2>Do projeto à personalização.</h2>
+          <p>
+            Trabalhamos com diferentes processos de impressão
+            para transformar ideias em produtos personalizados,
+            respeitando as características de cada material.
+          </p>
+
+          <div class="service-list">
+            <div class="service-item">DTF Têxtil</div>
+            <div class="service-item">Sublimação</div>
+            <div class="service-item">DTF UV</div>
+          </div>
+        </div>
+
+        <div class="services-note">
+          <strong>7 PRINT DESIGN</strong>
+          <h3>Cada detalhe importa.</h3>
+          <p>
+            Criatividade, cuidado e atenção em cada etapa
+            do desenvolvimento dos nossos produtos.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-content">
+        <div class="section-label">Quem somos</div>
+        <h2>Ideias que ganham identidade.</h2>
+        <p>
+          A 7 Print Design trabalha com criação e personalização
+          de produtos, unindo design, tecnologia e atenção
+          aos detalhes. Nosso objetivo é transformar ideias
+          em peças que tenham significado para quem escolhe.
+        </p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="container">
+        <div class="section-label">Vamos criar juntos?</div>
+        <h2>Sua próxima ideia começa aqui.</h2>
+        <p>
+          Entre em contato e conte o que você gostaria de personalizar.
+        </p>
+
+        <a class="button"
+           href="https://wa.me/5511955577306"
+           target="_blank">SOLICITAR ORÇAMENTO PELO WHATSAPP</a>
+      </div>
+    </section>
+
   </main>
-  <footer>7 Print Design — Criatividade e personalização.</footer>
+
+  <footer>
+    <div class="container footer-content">
+      <strong>7 PRINT <span>DESIGN</span></strong>
+      <div>Vestuário • Personalizados • Linha religiosa</div>
+      <div>© 2026 7 Print Design. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
 </body>
 </html>
