@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://7printdesign.com.br/sitemap.xml
